@@ -25,8 +25,10 @@ namespace Disrespect
             Config.AddItem(new MenuItem("jokeon", "Joke").SetValue(true));
             // Config.AddItem(new MenuItem("danceon", "Dance").SetValue(true));
             Config.AddItem(new MenuItem("taunton", "Taunt").SetValue(true));
+            Config.AddItem(new MenuItem("keybind", "Active").SetValue(new KeyBind('t', KeyBindType.Press)));
 
-            Config.AddItem(new MenuItem("sep", "-----------------------"));
+
+            Config.AddItem(new MenuItem("sep", ""));
             Config.AddItem(new MenuItem("lk", "Input"));
             Config.AddItem(new MenuItem("vers", "2.0.0.0"));
 
