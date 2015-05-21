@@ -30,7 +30,7 @@ namespace Disrespect
 
             Config.AddItem(new MenuItem("sep", ""));
             Config.AddItem(new MenuItem("lk", "Input"));
-            Config.AddItem(new MenuItem("vers", "2.2.0.0"));
+            Config.AddItem(new MenuItem("vers", "2.2.0.1"));
 
             Config.AddToMainMenu();
 
@@ -72,22 +72,25 @@ namespace Disrespect
                 args.EventId == GameEventId.OnTurretDie ||
                 args.EventId == GameEventId.OnTurretKill)
             {
-                if (Config.Item("laughon").GetValue<bool>() == true)
+                if (Config.Item("keybind").GetValue<KeyBind>().Active)
                 {
-                    Game.SendEmote(Emote.Laugh);
-                    Console.WriteLine("Laugh");
-                }
+                    if (Config.Item("laughon").GetValue<bool>() == true)
+                    {
+                        Game.SendEmote(Emote.Laugh);
+                        Console.WriteLine("Laugh");
+                    }
 
-                if (Config.Item("jokeon").GetValue<bool>() == true)
-                {
-                    Game.SendEmote(Emote.Joke);
-                    Console.WriteLine("Joke");
-                }
+                    if (Config.Item("jokeon").GetValue<bool>() == true)
+                    {
+                        Game.SendEmote(Emote.Joke);
+                        Console.WriteLine("Joke");
+                    }
 
-                if (Config.Item("taunton").GetValue<bool>() == true)
-                {
-                    Game.SendEmote(Emote.Taunt);
-                    Console.WriteLine("Taunt");
+                    if (Config.Item("taunton").GetValue<bool>() == true)
+                    {
+                        Game.SendEmote(Emote.Taunt);
+                        Console.WriteLine("Taunt");
+                    }
                 }
             }
         }
