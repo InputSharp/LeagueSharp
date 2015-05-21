@@ -30,7 +30,7 @@ namespace Disrespect
 
             Config.AddItem(new MenuItem("sep", ""));
             Config.AddItem(new MenuItem("lk", "Input"));
-            Config.AddItem(new MenuItem("vers", "2.0.0.0"));
+            Config.AddItem(new MenuItem("vers", "2.2.0.0"));
 
             Config.AddToMainMenu();
 
@@ -74,31 +74,22 @@ namespace Disrespect
             {
                 if (Config.Item("laughon").GetValue<bool>() == true)
                 {
-                    Game.Say("/laugh");
+                    Game.SendEmote(Emote.Laugh);
                     Console.WriteLine("Laugh");
                 }
 
                 if (Config.Item("jokeon").GetValue<bool>() == true)
                 {
-                    Game.Say("/joke");
+                    Game.SendEmote(Emote.Joke);
                     Console.WriteLine("Joke");
                 }
 
                 if (Config.Item("taunton").GetValue<bool>() == true)
                 {
-                    Game.Say("/taunt");
+                    Game.SendEmote(Emote.Taunt);
                     Console.WriteLine("Taunt");
                 }
             }
-        }
-
-        private static void Laugh()
-        {
-            if (Config.Item("laughon").GetValue<bool>() == true)
-            {
-                Game.Say("/laugh");
-                Console.WriteLine("Laugh");
-            }       
         }
     }
 }
